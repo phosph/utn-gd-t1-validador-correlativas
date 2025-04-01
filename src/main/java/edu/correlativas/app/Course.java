@@ -1,17 +1,16 @@
 package edu.correlativas.app;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Course {
     String id;
-    List<Course> correlatives;
+    ArrayList<Course> correlatives = new ArrayList<>();
 
-    public Course(String id) {
-        this(id, List.of());
-    }
 
-    public Course(String id, List<Course> correlatives) {
-        this.correlatives = correlatives;
+    public Course(String id, Course... correlatives) {
+        Collections.addAll(this.correlatives, correlatives);
         this.id = id;
     }
 

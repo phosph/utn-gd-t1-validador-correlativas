@@ -2,18 +2,21 @@ package edu.correlativas.app;
 
 import edu.correlativas.app.exceptions.InvalidCourseListException;
 import edu.correlativas.app.exceptions.StudentAlreadyHasApprovedCourseException;
+
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Inscription {
 
     Student student;
-    List<Course> courses;
+    ArrayList<Course> courses = new ArrayList<>();
 
-    public Inscription(Student student, List<Course> courses) throws InvalidCourseListException {
-        if (courses.isEmpty()) throw new InvalidCourseListException("course list shouldn't be empty", courses);
+    public Inscription(Student student, Course... courses) throws InvalidCourseListException {
+        if (courses.length == 0) throw new InvalidCourseListException();
 
         this.student = student;
-        this.courses = courses;
+        Collections.addAll(this.courses, courses);
     }
 
     private void assertAlreadyApprovedCourse() throws StudentAlreadyHasApprovedCourseException {

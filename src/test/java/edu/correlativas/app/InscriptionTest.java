@@ -17,20 +17,22 @@ public class InscriptionTest {
 
     @Test
     public void emptyListException() {
-        var emptyList = new ArrayList<Course>();
         var student = new Student();
 
-        InvalidCourseListException exception = assertThrows(InvalidCourseListException.class, () -> new Inscription(student, emptyList), "new Inscription with empty list should throws");
-
-        assertEquals(exception.getCourseList(), emptyList, "exception provides the list that cause the error");
+        InvalidCourseListException exception = assertThrows(InvalidCourseListException.class, () -> new Inscription(student), "new Inscription with empty list should throws");
     }
 
     @Test
     public void coursesWithoutCorrelatives() throws InvalidCourseListException, StudentAlreadyHasApprovedCourseException {
         var student = new Student();
-        var courses = IntStream.range(0,5).mapToObj((i) -> new Course(UUID.randomUUID().toString())).toList();
 
-        var inscription = new Inscription(student, courses);
+        var inscription = new Inscription(student,
+                new Course(UUID.randomUUID().toString()),
+                new Course(UUID.randomUUID().toString()),
+                new Course(UUID.randomUUID().toString()),
+                new Course(UUID.randomUUID().toString()),
+                new Course(UUID.randomUUID().toString())
+        );
 
         assertTrue(inscription.approved());
     }
@@ -43,12 +45,12 @@ public class InscriptionTest {
 
         var course = new Course(
                 UUID.randomUUID().toString(),
-                List.of(new Course[]{unmatchedCorrelative})
+                unmatchedCorrelative
         );
 
         var inscription = new Inscription(
                 student,
-                List.of(new Course[]{course})
+                course
         );
 
         assertFalse(inscription.approved());
@@ -64,12 +66,12 @@ public class InscriptionTest {
 
         var course = new Course(
                 UUID.randomUUID().toString(),
-                List.of(new Course[]{matchedCorrelative})
+                matchedCorrelative
         );
 
         var inscription = new Inscription(
                 student,
-                List.of(new Course[]{course})
+                course
         );
 
         assertTrue(inscription.approved());
@@ -86,7 +88,7 @@ public class InscriptionTest {
 
         var inscription = new Inscription(
                 student,
-                List.of(new Course[]{ approvedCourse })
+                approvedCourse
         );
 
         StudentAlreadyHasApprovedCourseException exception = assertThrows(StudentAlreadyHasApprovedCourseException.class, inscription::approved);
