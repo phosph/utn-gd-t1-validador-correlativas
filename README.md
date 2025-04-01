@@ -1,6 +1,6 @@
 # Validador de Correlatividades · Resolución
 
-El present Repositorio contiene mi resolución del ejercicio [_Validador de Inscripciones según Correlatividades_](https://drive.google.com/file/d/1E0AkjwbHcVpNJblj-ff5ARekCbcqMGo8/view).
+El presente Repositorio contiene mi resolución del ejercicio [_Validador de Inscripciones según Correlatividades_](https://drive.google.com/file/d/1E0AkjwbHcVpNJblj-ff5ARekCbcqMGo8/view).
 
 El proyecto sigue la estructura estandar de [Maven](https://maven.apache.org/) para el
 [código](./src/main/java/edu/correlativas/app) y los
