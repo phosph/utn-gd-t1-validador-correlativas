@@ -4,7 +4,7 @@ El present Repositorio contiene mi resolución del ejercicio [_Validador de Insc
 
 El proyecto sigue la estructura estandar de [Maven](https://maven.apache.org/) para el código y los tests.
 
-El diagrama de clase se encuentra en **TODO**.
+El diagrama de clase se encuentra en doc/[diagram.png](./doc/diagram.png).
 
 ## [Enunciado](https://drive.google.com/file/d/1E0AkjwbHcVpNJblj-ff5ARekCbcqMGo8/view)
 ### Contexto

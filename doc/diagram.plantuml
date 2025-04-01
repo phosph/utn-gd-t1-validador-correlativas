@@ -1,0 +1,36 @@
+@startuml
+title Diagrama de Clases
+
+class Student {
+    + <<Create>> Student()
+
+    - courses: Course[]
+
+    + boolean hasApprovedCourse(course: Course)
+    + void addApprovedCourse(course: Course)
+}
+
+class Inscription {
+    + <<Create>> Inscription(student: Student, courses: Course[])
+
+    - student: Student;
+    - courses: Course[];
+
+    + boolean approved()
+}
+
+class Course {
+    + <<Create>> Course(id: String)
+    + <<Create>> Course(id: String, correlatives: Course[])
+
+    - id: String
+    - correlatives: Course[]
+    + boolean studentHasRequirements(student: Student)
+}
+
+
+Inscription --> "*" Course
+Inscription *-- Student
+Course --> "*" Course
+Student -> "*" Course
+@enduml
