@@ -4,7 +4,7 @@ import edu.correlativas.app.exceptions.InvalidCourseListException;
 import edu.correlativas.app.exceptions.StudentAlreadyHasApprovedCourseException;
 import java.util.List;
 
-class Inscription {
+public class Inscription {
 
     Student student;
     List<Course> courses;
