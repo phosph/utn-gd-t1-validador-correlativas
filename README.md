@@ -2,9 +2,14 @@
 
 El present Repositorio contiene mi resolución del ejercicio [_Validador de Inscripciones según Correlatividades_](https://drive.google.com/file/d/1E0AkjwbHcVpNJblj-ff5ARekCbcqMGo8/view).
 
-El proyecto sigue la estructura estandar de [Maven](https://maven.apache.org/) para el código y los tests.
+El proyecto sigue la estructura estandar de [Maven](https://maven.apache.org/) para el
+[código](./src/main/java/edu/correlativas/app) y los
+[tests](./src/test/java/edu/correlativas/app/InscriptionTest.java).
 
-El diagrama de clase se encuentra en doc/[diagram.png](./doc/diagram.png).
+### Diagrama de Clases
+![El diagrama de clase se encuentra en `doc/diagram.png`.](./doc/diagram.png)
+
+
 
 ## [Enunciado](https://drive.google.com/file/d/1E0AkjwbHcVpNJblj-ff5ARekCbcqMGo8/view)
 ### Contexto
